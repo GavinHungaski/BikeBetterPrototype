@@ -16,8 +16,7 @@ import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 
-// Graphhopper API key
-const val API_KEY = "51e710c5-c9ea-493c-a466-8e85a4c60d69"
+const val GRAPHHOPPER_APIKEY = "51e710c5-c9ea-493c-a466-8e85a4c60d69"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var map: MapView
@@ -60,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                     mapController.setZoom(15.0)
                     mapController.animateTo(myGeoPoint)
                 }
-                getRoute(myLocation!!.latitude, myLocation.longitude, 34.0549, -118.2426, "racingbike", API_KEY) { response ->
+                getRoute(myLocation!!.latitude, myLocation.longitude, 34.0549, -118.2426, "racingbike", GRAPHHOPPER_APIKEY) { response ->
                     response?.let {
                         try {
                             runOnUiThread {
